@@ -1,0 +1,26 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2021-02-27T20:23:12+01:00",
+    "name": "Rage MP",
+    "author": "den@ducky.rocks",
+    "description": "Rage MP Egg",
+    "image": "dennorske\/pterodactyl-ragemp:latest",
+    "startup": ".\/server",
+    "config": {
+        "files": "{\r\n    \"conf.json\": {\r\n        \"parser\": \"json\",\r\n        \"find\": {\r\n            \"port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"loaded\",\r\n    \"userInteraction\": [\r\n        \"Invalid MySQL server\",\r\n        \"Command not found\",\r\n        \"failed to interpret directory as Pawn package\"\r\n    ]\r\n}",
+        "logs": "{\r\n    \"custom\": true,\r\n    \"location\": \"rage.log\"\r\n}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#! \/bin\/bash\r\n\r\nmkdir -p \/mnt\/server\r\n\r\nwget https:\/\/cdn.rage.mp\/lin\/ragemp-srv-037.tar.gz\r\ntar -xzf ragemp-srv-037.tar.gz -C \/mnt\/server\r\ncd ragemp-srv\r\nchmod +x server\r\nrm -rf *.tar.gz\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server",
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": []
+}
