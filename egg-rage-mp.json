@@ -3,7 +3,7 @@
     "meta": {
         "version": "PTDL_v1"
     },
-    "exported_at": "2021-02-27T23:36:14+01:00",
+    "exported_at": "2021-02-28T12:58:38+01:00",
     "name": "Rage MP",
     "author": "den@ducky.rocks",
     "description": "Rage MP Egg",
@@ -17,7 +17,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#! \/bin\/bash\r\n\r\nmkdir -p \/mnt\/server\r\n\r\napk add --update openssl\r\n\r\nwget https:\/\/cdn.rage.mp\/lin\/ragemp-srv-037.tar.gz\r\ntar -xzf ragemp-srv-037.tar.gz -C \/mnt\/server\r\ncd \/mnt\/server\r\nmv ragemp-srv\/* . \r\nrm -rf ragemp-srv\r\nchmod +x server\r\nrm -rf *.tar.gz\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server",
+            "script": "#! \/bin\/bash\r\n\r\nmkdir -p \/mnt\/server\r\n\r\napk add --update openssl\r\n\r\nwget https:\/\/cdn.rage.mp\/lin\/ragemp-srv-037.tar.gz\r\ntar -xzf ragemp-srv-037.tar.gz -C \/mnt\/server\r\nwget https:\/\/cdn.rage.mp\/updater\/10_mNwuchuQ4ktWbR8d2N5jUzRt\/server-files\/linux_x64.tar.gz\r\ntar -xzf linux_x64.tar.gz -C \/mnt\/server\r\ncd \/mnt\/server\r\nmv ragemp-srv\/* . \r\nrm -rf ragemp-srv\r\nchmod +x server\r\nrm -rf *.tar.gz\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server",
             "container": "alpine:3.4",
             "entrypoint": "ash"
         }
