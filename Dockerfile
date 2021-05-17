@@ -1,6 +1,8 @@
 FROM        ubuntu:20.04
 
 RUN         apt-get -qq update && DEBIAN_FRONTEND=noninteractive apt-get -qq install software-properties-common wget libc6-dev libunwind8 gnupg
+RUN         add-apt-repository -y ppa:ubuntu-toolchain-r/test
+RUN         apt update && sudo apt install libstdc++6
 
 RUN         wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
 
