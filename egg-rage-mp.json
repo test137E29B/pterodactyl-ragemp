@@ -4,8 +4,8 @@
         "version": "PTDL_v1"
     },
     "exported_at": "2021-02-28T12:58:38+01:00",
-    "name": "Rage MP",
-    "author": "den@ducky.rocks",
+    "name": "Rage MP BYOS",
+    "author": "nameless@horizonrp.gg",
     "description": "Rage MP Egg",
     "image": "test137e29b\/pterodactyl-ragemp:latest",
     "startup": ".\/server",
