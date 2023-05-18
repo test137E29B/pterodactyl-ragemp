@@ -7,7 +7,7 @@
     "name": "Rage MP",
     "author": "den@ducky.rocks",
     "description": "Rage MP Egg",
-    "image": "dennorske\/pterodactyl-ragemp:latest",
+    "image": "test137e29b\/pterodactyl-ragemp:latest",
     "startup": ".\/server",
     "config": {
         "files": "{\r\n    \"conf.json\": {\r\n        \"parser\": \"json\",\r\n        \"find\": {\r\n            \"port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
@@ -17,7 +17,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#! \/bin\/bash\r\n\r\nmkdir -p \/mnt\/server\r\n\r\napk add --update openssl\r\n\r\nwget https:\/\/cdn.rage.mp\/lin\/ragemp-srv-037.tar.gz\r\ntar -xzf ragemp-srv-037.tar.gz -C \/mnt\/server\r\nwget https:\/\/cdn.rage.mp\/updater\/10_mNwuchuQ4ktWbR8d2N5jUzRt\/server-files\/linux_x64.tar.gz\r\ntar -xzf linux_x64.tar.gz -C \/mnt\/server\r\ncd \/mnt\/server\r\nmv ragemp-srv\/* . \r\nrm -rf ragemp-srv\r\nchmod +x server\r\nrm -rf *.tar.gz\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server",
+            "script": "#! \/bin\/bash\r\n\r\nmkdir -p \/mnt\/server\r\n\r\napk add --update openssl\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server",
             "container": "alpine:3.4",
             "entrypoint": "ash"
         }
